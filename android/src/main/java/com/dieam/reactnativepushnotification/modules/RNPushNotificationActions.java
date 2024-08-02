@@ -62,7 +62,7 @@ public class RNPushNotificationActions extends BroadcastReceiver {
       RNPushNotificationHelper helper = new RNPushNotificationHelper((Application) context.getApplicationContext());
 
       helper.invokeApp(bundle);
-      if (Build.VERSION.SDK_INT <= 31) {
+      if (Build.VERSION.SDK_INT < 31) {
         context.sendBroadcast(new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS));
       }
     } else {
